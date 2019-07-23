@@ -28,3 +28,19 @@ Sample Output 0
 
 19:05:45
 */
+function timeConversion(s) {
+  
+    var hr = s.split(':')[0];
+    var amPm = s.slice(8);
+
+    if (amPm === 'AM') {
+        if (hr === '12') {
+            return '00'+s.slice(2, 8);
+        }
+        return s.slice(0, 8);
+    } else {
+        
+        return (parseInt(hr)+12)+s.slice(2,8);
+    }
+
+}
