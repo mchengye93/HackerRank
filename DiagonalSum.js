@@ -54,3 +54,21 @@ Difference: |4 - 19| = 15
 
 Note: |x| is the absolute value of x
 */
+function diagonalDifference(arr) {
+    // Write your code here
+    var leftDiagonalSum = 0;
+    var rightDiagonalSum = 0;
+
+    var x = arr.length - 1;
+    for (var i = 0; i < arr.length; i++){
+        //left diagonal sum
+        leftDiagonalSum += arr[i][i];
+
+        //right diagonal sum
+        rightDiagonalSum += arr[i][x];
+        x--;
+
+    }
+    return Math.abs(leftDiagonalSum - rightDiagonalSum);
+
+}
