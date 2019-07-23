@@ -53,7 +53,15 @@ function plusMinus(arr) {
     var count = [0, 0, 0];
 
     for (var i = 0; i < arr.length; i++){
-        
+        if (arr[i] > 0) {
+            count[0] += 1;
+        } else if (arr[i] < 0) {
+            count[1] += 1;
+        } else {
+            count[2] += 1;
+        }
     }
+    console.log(count);
+    return [count[0] / arr.length, count[1] / arr.length, count[2] / arr.length];
 
 }
