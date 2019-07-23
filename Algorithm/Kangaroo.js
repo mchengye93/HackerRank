@@ -51,3 +51,21 @@ Explanation 1
 
 The second kangaroo has a starting location that is ahead (further to the right) of the first kangaroo's starting location (i.e., ). Because the second kangaroo moves at a faster rate (meaning ) and is already ahead of the first kangaroo, the first kangaroo will never be able to catch up. Thus, we print NO.
 */
+function kangaroo(x1, v1, x2, v2) {
+    var k1 = x1;
+    var k2 = x2;
+    if (v1 > v2) {
+        while (k1 < k2) {
+            k1 = k1 + v1;
+            k2 = k2 + v2;
+            if (k1 === k2) {
+                console.log('YES');
+                return 'YES';
+            }
+
+        }    
+    }
+    console.log('NO');
+    return 'NO';
+    
+}
