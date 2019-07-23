@@ -51,3 +51,22 @@ Student  received a , and the next multiple of  from  is . Since , the grade wil
 Student  received a , and the next multiple of  from  is . Since , the student's grade will be rounded to .
 Student  received a grade below , so the grade will not be modified and the student's final grade is .
 */
+function gradingStudents(grades) {
+    var results = [];
+    for (var i = 0; i < grades.length; i++) {
+        if (grades[i] < 38) {
+            results.push(grades[i]);
+        }
+        else {
+            var multipleFive = (Math.floor(grades[i] / 5) + 1) * 5;
+            var diff = multipleFive - grades[i];
+            if (diff < 3) {
+                results.push(multipleFive);
+            } else {
+                results.push(grades[i]);
+            }
+        }
+    }
+    return results;
+
+}
