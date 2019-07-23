@@ -68,3 +68,20 @@ Sample Output
 
 19
 */
+function hourglassSum(arr) {
+    var max = Number.NEGATIVE_INFINITY;
+    var hourglass;
+    for (var i = 0; i < 4; i++){
+        for (var x = 0; x < 4; x++){
+            var sum = arr[i][x] + arr[i][x + 1] + arr[i][x + 2] + arr[i + 1][x + 1]
+                + arr[i + 2][x] + arr[i + 2][x + 1] + arr[i + 2][x + 2];
+            if (sum > max) {
+                max = sum;
+                hourglass = [[arr[i][x], arr[i][x + 1], arr[i][x + 2]], [0, arr[i + 1][x + 1], 0], [arr[i + 2][x], arr[i + 2][x + 1], arr[i + 2][x + 2]]];
+
+            }
+        }
+    }
+    return max;
+
+}
