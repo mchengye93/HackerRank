@@ -45,3 +45,13 @@ Explanation
 
 The staircase is right-aligned, composed of # symbols and spaces, and has a height and width of .
 */
+function staircase(n) {
+    for (var i = 0; i < n; i++) {
+        var str = '#';
+        for (var x = 0; x < i ; x++){
+            str += '#';
+        }
+        console.log(str);
+    }
+
+}
