@@ -35,3 +35,12 @@ Sample Output 1
 
 2 3 4 1
 */
+function reverseArray(a) {
+    var reverseArr = [];
+    for (var i = a.length - 1; i >= 0; i--){
+        reverseArr.push(a[i]);
+    }
+    return reverseArr;
+
+
+}
