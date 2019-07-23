@@ -61,7 +61,12 @@ function plusMinus(arr) {
             count[2] += 1;
         }
     }
-    console.log(count);
-    return [count[0] / arr.length, count[1] / arr.length, count[2] / arr.length];
+    
+    var result = [];
+    for (var i = 0; i < 3; i++){
+        result.push((count[i] / arr.length).toFixed(6));
+    }
+    
+    return result;
 
 }
