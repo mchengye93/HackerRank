@@ -60,3 +60,22 @@ The second orange falls at position .
 Only one fruit (the second apple) falls within the region between  and , so we print  as our first line of output. 
 Only the second orange falls within the region between  and , so we print  as our second line of output.
 */
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+    var appleCount = 0;
+    for (var i = 0; i < apples.length; i++){
+        var distance = apples[i] + a;
+        if (distance >= s && distance <= t) {
+            appleCount++;
+        }
+    }
+    console.log(appleCount);
+    var orangeCount = 0;
+    for (var i = 0; i < oranges.length; i++){
+        var distance = oranges[i] + b;
+        if (distance >= s && distance <= t) {
+            orangeCount++;
+        }
+    }
+    console.log(orangeCount);
+
+}
