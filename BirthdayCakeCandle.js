@@ -32,3 +32,31 @@ Explanation 0
 
 We have one candle of height , one candle of height , and two candles of height . Your niece only blows out the tallest candles, meaning the candles where . Because there are  such candles, we print  on a new line.
 */
+function birthdayCakeCandles(ar) {
+    var max = ar[0];
+
+    var candleCount = {};
+
+    for (var i = 0; i < ar.length; i++) {
+        if (ar[i] > max) {
+            max = ar[i];
+        }
+
+        if (candleCount[ar[i]] === undefined) {
+            candleCount[ar[i]] = 1;
+        } else {
+            candleCount[ar[i]] += 1;
+        }
+    }
+
+    var totalCandle = 0;
+    console.log(candleCount);
+    for (var key in candleCount) {
+        if (key == max) {
+            totalCandle += candleCount[key];
+        }
+    }
+    return totalCandle;
+
+
+}
