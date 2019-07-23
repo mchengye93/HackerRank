@@ -50,3 +50,26 @@ _/\      _
     \/\/
 He enters and leaves one valley.
 */
+function countingValleys(n, s) {
+    //a valley is everything time it goes from 0 to -1
+    var totalValley = 0;
+    var level = 0;
+    if (s[0] === 'D') {
+        totalValley = 1;
+    }
+    for (var i = 0; i < s.length-1; i++){
+        if (s[i] === 'U') {
+            level += 1;
+        } else {
+            level -= 1;
+        }
+
+        //a valley is everything time it goes from 0 to -1
+    
+        if (level === 0 && s[i + 1] === 'D') {
+            totalValley += 1;
+        }
+    }
+    return totalValley;
+
+}
