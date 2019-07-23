@@ -49,3 +49,11 @@ Explanation
 There are  positive numbers,  negative numbers, and  zero in the array. 
 The proportions of occurrence are positive: , negative:  and zeros: .
 */
+function plusMinus(arr) {
+    var count = [0, 0, 0];
+
+    for (var i = 0; i < arr.length; i++){
+        
+    }
+
+}
