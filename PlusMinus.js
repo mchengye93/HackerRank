@@ -64,7 +64,9 @@ function plusMinus(arr) {
     
     var result = [];
     for (var i = 0; i < 3; i++){
-        result.push((count[i] / arr.length).toFixed(6));
+        var fraction = (count[i] / arr.length).toFixed(6);
+        result.push(fraction);
+        console.log(fraction)
     }
     
     return result;
