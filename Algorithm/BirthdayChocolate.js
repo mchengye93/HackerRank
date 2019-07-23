@@ -67,3 +67,18 @@ Explanation 2
 
 Lily only wants to give Ron  square of chocolate with an integer value of . Because the only square of chocolate in the bar satisfies this constraint, we print  as our answer.
 */
+function birthday(s, d, m) {
+    var count = 0;
+
+    for (var i = 0; i <= s.length - m; i++) {
+        var sum = 0;
+        for (var x = 0; x < m; x++) {
+            sum += s[i + x];
+        }
+        if (sum === d) {
+            count++;
+        }
+    }
+    return count;
+
+}
