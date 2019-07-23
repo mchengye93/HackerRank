@@ -37,3 +37,22 @@ Sample Output 0
 
 2 4
 */
+function breakingRecords(scores) {
+    var breakRecords = [0, 0];
+    var min = scores[0];
+    var max = scores[0];
+
+    for (var i = 1; i < scores.length; i++){
+        if (scores[i] > max) {
+            max = scores[i];
+            breakRecords[0] += 1;
+        } 
+        if (scores[i] < min) {
+            min = scores[i];
+            breakRecords[1] += 1;
+        }
+    }
+    
+    return breakRecords;
+
+}
