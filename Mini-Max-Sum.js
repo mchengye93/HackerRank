@@ -38,3 +38,21 @@ If we sum everything except , our sum is .
 If we sum everything except , our sum is .
 If we sum everything except , our sum is .
 */
+function miniMaxSum(arr) {
+    var sort = arr.sort((a, b) => a - b);
+    //console.log(sort);
+
+    var sum = 0;
+    var sumArr = [];
+    for (var i = 0; i < 4; i++){
+        sum += arr[i];
+    }
+   sumArr.push(sum);
+    sum = 0; 
+    for (var i = 1; i < 5; i++) {
+        sum += arr[i];
+    }
+    sumArr.push(sum);
+    console.log(sumArr.toString().split(','). join(' '));
+
+}
