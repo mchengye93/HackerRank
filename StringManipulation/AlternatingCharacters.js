@@ -40,3 +40,17 @@ Sample Output
 0
 4
 */
+function alternatingCharacters(s) {
+
+    var deletions = 0;
+    var currentLetter = s[0];
+    for (var i = 1; i < s.length; i++){
+        if (currentLetter === s[i]) {
+            deletions++;
+        } else {
+            currentLetter = s[i];
+        }
+    }
+    return deletions;
+    
+}
