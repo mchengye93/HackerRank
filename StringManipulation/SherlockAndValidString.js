@@ -58,7 +58,6 @@ function isValid(s) {
             var next = chars[x];
             console.log(current, next);
             
-        
             if (charCount[current] !== charCount[next]) {
                 if (charCount[current] > charCount[next]) {
                     if (changes === 0) {
