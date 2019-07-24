@@ -38,3 +38,28 @@ Sample Output 0
 
 4
 */
+function migratoryBirds(arr) {
+    var birdCount = {};
+
+    
+    for (var i = 0; i < arr.length; i++){
+        if (birdCount[arr[i]] === undefined) {
+            birdCount[arr[i]] = 1;
+        } else {
+            birdCount[arr[i]] += 1;
+        }
+    }
+    console.log(birdCount);
+    var max = 0;
+    for (var key in birdCount) {
+        if (birdCount[key] > max) {
+            max = birdCount[key];
+        }
+    }
+    for (var i = 1; i <= 5; i++) {
+        if (birdCount[i] === max) {
+            return i;
+        }
+    }
+
+}
