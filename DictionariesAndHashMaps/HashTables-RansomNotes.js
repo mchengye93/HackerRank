@@ -67,3 +67,39 @@ Explanation 2
 
 Harold's magazine is missing the word some.
 */
+
+function checkMagazine(magazine, note) {
+    var magazineWordCount = {};
+    var noteWordCount = {};
+
+    for (var i = 0; i < magazine.length; i++){
+        if (magazineWordCount[magazine[i]] === undefined) {
+            magazineWordCount[magazine[i]] = 1;
+        } else {
+            magazineWordCount[magazine[i]] = magazineWordCount[magazine[i]] + 1;
+        }
+    }
+
+    for (var i = 0; i < note.length; i++){
+        if (noteWordCount[note[i]] === undefined) {
+            noteWordCount[note[i]] = 1;
+        } else {
+            noteWordCount[note[i]] = 1 +noteWordCount[note[i]];
+        }
+    }
+   
+    for (var key in noteWordCount) {
+        if (magazineWordCount[key] === undefined) {
+            console.log('No');
+            return 'No';
+        } else {
+            if (magazineWordCount[key] < noteWordCount[key]) {
+                console.log('No');
+                return 'No';
+            }
+        }
+    }
+    
+    console.log('Yes');
+    return 'Yes';
+}
