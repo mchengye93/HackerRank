@@ -52,3 +52,46 @@ Remove d and e from cde to get c.
 Remove a and b from abc to get c.
 We must delete 4 characters to make both strings anagrams, so we print 4 on a new line.
 */
+function makeAnagram(a, b) {
+    var aCount = {};
+    var bCount = {};
+
+    for (var i = 0; i < a.length; i++) {
+        if (aCount[a[i]] === undefined) {
+            aCount[a[i]] = 1;
+        } else {
+            aCount[a[i]] = 1 + aCount[a[i]];
+        }
+    }
+
+    for (var i = 0; i < b.length; i++) {
+        if (bCount[b[i]] === undefined) {
+            bCount[b[i]] = 1;
+        } else {
+            bCount[b[i]] = 1 + bCount[b[i]];
+        }
+    }
+ 
+    for (var key in bCount) {
+        if (aCount[key] === undefined) {
+            aCount[key] = bCount[key];
+        } else {
+            if (aCount[key] < bCount[key]) {
+                aCount[key] = bCount[key] - aCount[key];
+            }
+
+            else if (aCount[key] > bCount[key]) {
+                aCount[key] = aCount[key] - bCount[key];
+            }
+            else {
+                delete aCount[key];
+            }
+        }
+    }
+    var diffChars = 0;
+    for (var key in aCount) {
+        diffChars += aCount[key];
+    }
+
+    return diffChars;
+}
