@@ -1,0 +1,3 @@
+/*
+Calculate factorial of n
+*/
