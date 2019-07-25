@@ -1,0 +1,3 @@
+/*
+Given height of each letter represent by h. Find the area taken by the word.
+*/
