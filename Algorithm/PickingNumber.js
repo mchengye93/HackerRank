@@ -39,6 +39,7 @@ Explanation 0
 We choose the following multiset of integers from the array: {4,3,3}. Each pair in the multiset has an absolute 
 difference <=1 (i.e., |4-3| and |3-3| =0 ), so we print the number of chosen integers, 3, as our answer.
 */
+
 function pickingNumbers(a) {
     var aSort = a.sort((a, b) => a - b);
   
@@ -46,21 +47,37 @@ function pickingNumbers(a) {
 
     for (var i = 0; i < aSort.length; i++) {
         var current = aSort[i];
+       
         var group = [];
-        for (var x = i+1; x < aSort.length-1; x++){
-            
-    
+        var secondNum = -1;
+        for (var x = i; x < aSort.length; x++){
             var next = aSort[x];
+
             console.log('Current:', current);
             console.log('Next:', next);
 
-            if (Math.abs(current - next) <= 1) {
-                group.push(next);
+            if (secondNum === -1) {
+                if (Math.abs(current - next) === 1) {
+                    group.push(next);
+                    secondNum = next;
+                } else {
+                    if (Math.abs(current - next) === 0) {
+                        group.push(next);
+                    }
+
+                }
             }
+            else {
+                if (next === current || next === secondNum) {
+                    group.push(next);
+                }
+            }
+           
         }
+        secondNum === -1;
         console.log(group);
         if (group.length > max) {
-            max = group.length+1;
+            max = group.length;
         }
     }
     return max;
