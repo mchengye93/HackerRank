@@ -8,20 +8,25 @@ her infinite string.  There are  occurrences of a in the substring.
 */
 function repeatedString(s, n) {
     var repeatString = '';
-    var numTimesRepeat = Math.ceil(n/s.length);
-    console.log(numTimesRepeat);
-    for (var i = 0; i < numTimesRepeat; i++){
-        repeatString += s;
-        
-    }
-    console.log(repeatString);
-    var aCount = 0;
 
-    for (var i = 0; i < n; i++){
-        if (repeatString[i] === 'a') {
+    //calculate in give string how many a's
+    var aCount = 0;
+    for (var i = 0; i < s.length; i++){
+        if (s[i] === 'a') {
             aCount++;
         }
     }
-    return aCount;
- 
+    var numTimesRepeat = Math.floor(n / s.length);
+
+    var stringLeft = n % s.length;
+    var aCountFromStrLeft = 0;
+    for (var i = 0; i < stringLeft; i++){
+        if (s[i] === 'a') {
+            aCountFromStrLeft++;
+        }
+    }
+
+    return (aCount * numTimesRepeat)+aCountFromStrLeft;
+    
+
 }
