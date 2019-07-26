@@ -16,3 +16,25 @@ Sample Output
 
 2   
 */
+
+function equalizeArray(arr) {
+    var count = {};
+    var max = 1;
+    for (var i = 0; i < arr.length; i++) {
+        if (count[arr[i]] === undefined) {
+            count[arr[i]] = 1;
+            
+        } else {
+            count[arr[i]] += 1;
+            if (count[arr[i]] > max) {
+                max = count[arr[i]];
+            }
+        }
+    }
+    if (max === 1) {
+        return arr.length - 1;
+    }
+
+    return arr.length - max;
+
+}
