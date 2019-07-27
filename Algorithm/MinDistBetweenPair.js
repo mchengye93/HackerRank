@@ -9,3 +9,23 @@ Sample Output
 
 3
 */
+function minimumDistances(a) {
+    var minPairDistance = a.length;
+
+    for (var i = 0; i < a.length; i++) {
+        var num = a[i];
+        for (var x = i + 1; x < a.length; x++){
+            if (num === a[x]) {
+                var dis = x - i;
+                if (dis < minPairDistance) {
+                    minPairDistance = dis;
+                }
+            }
+        }
+    }
+    if (minPairDistance === a.length) {
+        return -1;
+    }
+    return minPairDistance;
+
+}
