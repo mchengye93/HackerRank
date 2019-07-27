@@ -1,0 +1,4 @@
+/*
+There is a chocolate promotion. Each bar cost c and you can exchange one free chocolate bar for every m wraps.
+Given a budget of n. Find total number of chocolate bar you can eat before you run out of budget.
+*/
