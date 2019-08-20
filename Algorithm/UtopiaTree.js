@@ -15,3 +15,26 @@ Period  Height
 4          7
 5          14
 */
+
+function utopianTree(n) {
+    var height = 0;
+
+    // Period  Height
+    // 0          1
+    // 1          2
+    // 2          3
+    // 3          6
+    // 4          7
+    // 5          14
+
+    for (let i = 0; i <= n; i++) {
+        if (i % 2 === 0) {
+            height += 1;
+        } else {
+            height = height * 2;
+        }
+    }
+    return height;
+
+
+}
